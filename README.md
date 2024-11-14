@@ -1,85 +1,87 @@
-ContactHub - A Contact Management Application
-ContactHub is a full-stack contact management application built with ReactJS (Material UI) on the frontend and NodeJS on the backend. This project supports CRUD operations for managing contact information, including details like names, emails, phone numbers, company, and job title.
+# ContactHub
 
-Features
-Create: Add new contacts with validation checks.
-Read: View all contacts with pagination and sorting functionality.
-Update: Edit existing contact information.
-Delete: Remove contacts from the list.
-Technologies Used
-Frontend: ReactJS, Material UI
-Backend: NodeJS, ExpressJS
-Database: MongoDB
-Setup Instructions
-Clone the repository:
+ContactHub is a contact management application built using ReactJS for the frontend and NodeJS for the backend. It provides CRUD functionality for managing contacts, with Material UI (MUI) enhancing the user interface. The application enables users to view, add, edit, and delete contacts, making it easy to keep track of essential contact information.
 
-bash
-Copy code
-git clone https://github.com/divyanshucodes20/ContactHub-A-Contact-Management-App
+## Features
+
+- **CRUD Operations**: Create, read, update, and delete contact entries.
+- **Sorting and Pagination**: Sort contacts by different fields and navigate through pages.
+- **Responsive Design**: Built using Material UI for a modern, responsive interface.
+- **Error Handling**: Displays error messages to handle failed API calls or other issues.
+
+## Prerequisites
+
+- **Node.js** (v14 or higher)
+- **MongoDB** (for storing contact information)
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/divyanshucodes20/ContactHub-A-Contact-Management-App.git
 cd ContactHub-A-Contact-Management-App
-Install dependencies:
 
-For backend:
+
+2. Install dependencies
+Backend
+Navigate to the backend directory:
+
 bash
 Copy code
 cd backend
 npm install
-For frontend:
+Frontend
+Navigate to the frontend directory:
+
 bash
 Copy code
-cd ../frontend
+cd frontend
 npm install
-Database Configuration:
+3. Set up MongoDB
+Make sure you have MongoDB installed and running. Create a database for this project and update the MongoDB URI in the backend configuration.
 
-Ensure MongoDB is installed and running on your local machine or available on a cloud service.
-Create a .env file in the backend directory with the following:
-makefile
+4. Configure environment variables
+Create a .env file in the backend directory with the following environment variables:
+
+plaintext
 Copy code
-MONGODB_URI=your_mongodb_connection_string
 PORT=3000
-Run the Application:
-
+MONGO_URI=your_mongodb_connection_string
+5. Start the project
 Start the backend server:
+
 bash
 Copy code
 cd backend
 npm start
 Start the frontend development server:
+
 bash
 Copy code
-cd ../frontend
+cd frontend
 npm start
-Database Schema:
+The application should now be running on http://localhost:3000 (backend) and http://localhost:3001 (frontend).
 
-The MongoDB schema for contacts:
-js
+Usage
+View Contacts: View a paginated and sortable list of all contacts.
+Add a Contact: Use the "Add Contact" button to add a new contact entry.
+Edit a Contact: Click "Edit" next to any contact to modify details.
+Delete a Contact: Use the "Delete" button to remove a contact.
+Database Schema
+The database schema for a contact document in MongoDB:
+
+json
 Copy code
-const contactSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  phone: { type: String, required: true },
-  company: String,
-  jobTitle: String
-});
-Project Overview
-Frontend
-The frontend is built with ReactJS and styled using Material UI. The main components are:
-
-ViewContacts: Displays all contacts in a paginated, sortable table.
-ContactForm: Form for creating and editing contacts with client-side validation.
-ContactAPI: Handles CRUD operations by interacting with the backend API.
-Backend
-The backend uses ExpressJS and MongoDB to handle data storage and retrieval. Key features include:
-
-addContact: API endpoint to create a new contact.
-getContacts: API endpoint to fetch all contacts.
-updateContact: API endpoint to update an existing contact.
-deleteContact: API endpoint to delete a contact.
-Major Technical Decisions
-Material UI: Chosen for consistent, responsive design.
-Axios: Used for API requests between frontend and backend.
-MongoDB: Selected for flexibility and ease of use with JSON-like data structures.
+{
+  "_id": "ObjectId",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "phone": "string",
+  "company": "string",
+  "jobTitle": "string"
+}
 Challenges and Solutions
-Challenge: Learning Material UI
-This was my first time using Material UI, and adapting to its component-based structure and styling was initially challenging. I addressed this by studying the official documentation and experimenting with different components and layouts to achieve the required functionality and design.
+Challenge: Using Material UI (MUI)
+This project involved working with Material UI for the first time. Learning its component structure and styling methods was a bit challenging, especially for creating a responsive and modern UI. After experimenting with the MUI documentation and examples, I was able to implement table sorting, pagination, and dialogs effectively.
