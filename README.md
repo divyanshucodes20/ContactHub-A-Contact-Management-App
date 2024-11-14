@@ -34,8 +34,6 @@ npm install
 Frontend
 Navigate to the frontend directory:
 
-bash
-Copy code
 cd frontend
 npm install
 3. Set up MongoDB
@@ -51,14 +49,10 @@ MONGO_URI=your_mongodb_connection_string
 5. Start the project
 Start the backend server:
 
-bash
-Copy code
 cd backend
 npm start
 Start the frontend development server:
 
-bash
-Copy code
 cd frontend
 npm start
 The application should now be running on http://localhost:3000 (backend) and http://localhost:3001 (frontend).
@@ -71,8 +65,6 @@ Delete a Contact: Use the "Delete" button to remove a contact.
 Database Schema
 The database schema for a contact document in MongoDB:
 
-json
-Copy code
 {
   "_id": "ObjectId",
   "firstName": "string",
@@ -84,4 +76,4 @@ Copy code
 }
 Challenges and Solutions
 Challenge: Using Material UI (MUI)
-This project involved working with Material UI for the first time. Learning its component structure and styling methods was a bit challenging, especially for creating a responsive and modern UI. After experimenting with the MUI documentation and examples, I was able to implement table sorting, pagination, and dialogs effectively.
+This project involved working with Material UI for the first time. Learning its component structure and styling methods was a bit challenging. After experimenting with the MUI documentation and examples, I was able to implement table sorting, pagination, and dialogs effectively.
