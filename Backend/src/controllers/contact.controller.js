@@ -101,7 +101,7 @@ export const updateContact = async (req, res) => {
             updatedContact
         });
     } catch (error) {
-        res.status(400).json({
+        res.status(500).json({
             success: false,
             message: 'Failed to update contact',
             error: error.message
